@@ -1,0 +1,58 @@
+<template name="contact">
+	<div id="contact" class="container">
+		<h1>Contact Page</h1>
+		<h2>I'm always looking for creative projects and new connections.</h2>
+		<p>Please fill out the below form accuratley and with detail.<br/> I look forward to meeting you and your team.</p>
+        <div class="col-1">
+            <form action="mailer.php" method="POST" id="contact-form" autocomplete="off">
+                <div class="input-group name">
+                    <label for="f_name">Your Name<span class="required">*</span></label>
+                    <input type="text" id="f_name" name="name" placeholder="John Doe" required="">  
+                </div>
+                <div class="input-group email">
+                    <label for="f_email">Your Email<span class="required">*</span></label>
+                    <input type="text" id="f_email" name="email" placeholder="john@doe.com" required="">
+                </div>
+                <div class="input-group phone">
+                    <label for="f_phone">Your Phone</label>
+                    <input type="text" id="f_phone" name="phone" placeholder="111-222-3333">
+                </div>
+                <div class="input-group website">
+                    <label for="f_website">Your Website</label>
+                    <input type="text" id="f_website" name="website" placeholder="www.johndoe.com">
+                </div>
+                <div class="input-group hear">
+                    <label for="f_hear">How did you hear about Travismichael.net?</label>
+                    <input type="text" id="f_hear" name="hear" placeholder="Local News article">  
+                </div>
+                <div class="input-group budget">
+                    <label for="f_budget">Your Budget</label>
+                    <input type="text" id="f_budget" name="budget" placeholder="$5,000 and below">
+                </div>
+                <div class="input-group startdate">
+                    <label for="f_startdate">Your Start Date</label>
+                    <input type="text" id="f_startdate" name="startdate" placeholder="First of February 2/1/15">
+                </div>
+                <div class="input-group message">
+                    <label for="f_message">Message/Project description<span class="required">*</span></label>
+                    <textarea id="f_message" name="message" rows="5" placeholder="Description about your project or request." required=""></textarea> 
+                </div>
+                <div class="input-group submit">
+                    <button class="btn submit padding">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-2">
+            <div class="figure">
+                <img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=img+placeholder">
+                <p>This is a placeholder Image</p>
+            </div>
+            <address>
+                <span>444 Janety Road SE, Bumbleme SC, 479001</span>
+                <span>tmanHeller@email.com</span>
+                <span><strong>Available for hire: </strong>Fulltime-Position</span>
+            </address>
+            <button class="btn resume">Travis's Resume</button>
+        </div>
+	</div>
+</template>

@@ -1,0 +1,32 @@
+<template name="listProjects">
+	<section id="projects">
+		<ul class="projects">
+		{{#if Template.subscriptionsReady}}
+			{{#each projects}}
+				<li class="project" id="{{_id}}">
+					<div class="header">
+						<h3>{{name}}</h3>
+						<span class="color {{color _id}}">{{color _id}}</span>
+					</div>
+					<a href="{{pathFor 'project/:_id'}}">
+						<figure>
+							{{#if image}}
+								<img src="{{image}}" alt="{{name}}">
+							{{else}}
+								{{> spinner}}
+							{{/if}}
+							<figcaption>{{short_desc}}</figcaption>
+						</figure>
+						<div class="bottom-info">
+							<div>Tags: <span>{{tagsl}}</span></div>
+							<div>Category: <span>{{category}}</span></div>
+						</div>
+					</a>
+				</li>
+			{{/each}}
+		{{else}}
+			{{> spinner}}
+		{{/if}}
+		</ul>
+	</section>
+</template>

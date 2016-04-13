@@ -1,0 +1,1 @@
+Meteor.isClient&&(Meteor.subscribe("data"),Template.home.rendered=function(){Session.get("navopen")===!0?console.log("true"):openNavbar()},Template.home.helpers({rasp:function(){return Data.find()}}));

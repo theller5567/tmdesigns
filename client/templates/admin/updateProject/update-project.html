@@ -1,0 +1,47 @@
+<template name="updateproject">
+	<div id="updateproject" class="container">
+	{{#if admin}}
+		<a class="quicknav" href="{{pathFor 'admin'}}">Back to Admin page</a>
+		{{> projectInfo}}
+		<h1>Add Project</h1>
+		<div id="message">Your Project was Updated in the database</div>
+		{{> flashMessages}}
+		<form id="add-project" enctype="multipart/form-data" data-id="{{_id}}" data-img="{{imageId}}">
+			<div class="input-group">
+				<label>Project Name</label>
+				<input type="text" name="name" value="{{name}}" placeholder="Project Name">
+			</div>
+			<div class="input-group">
+				<label for="short_description">Project Short Description</label>
+				<input type="text" name="short_description" value="{{short_description}}" placeholder="Project short_description">
+			</div>
+			<div class="input-group">
+				<label for="long_description">Project Long Description</label>
+				<input type="text" name="long_description" value="{{long_description}}" placeholder="Project long_description">
+			</div>
+			<div class="input-group">
+				<label for="tags">Project Tags</label>
+				<input type="text" name="tags" value="{{tags}}" placeholder="Project tags">
+			</div>
+			<div class="input-group">
+				<label for="category">Project Category</label>
+				<select name="category" id="category" value="{{category}}">
+					<option value="web">Web</option>
+					<option value="animation">Animation</option>
+					<option value="illustration">Illustration</option>
+					<option value="4D Effects">4D Effects</option>
+					<option value="video">Video</option>
+				</select>
+			</div>
+			<div class="input-group">
+				<label for="projectImage">Upload Project image: </label>
+				<input type="file" name="projectImage" id="projectImage" data-id="{{image}}">
+			</div>
+			<input type="submit" name="submit" class="btn submit" value="Update Project">
+		</form>
+	{{else}}
+		<h2>You do not have the correct administration for this page.</h2>
+		<a href="{{pathFor 'home'}}">Go home</a>
+	{{/if}}
+	</div>
+</template>

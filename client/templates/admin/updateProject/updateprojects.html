@@ -1,0 +1,41 @@
+<template name="updateprojects">
+	<div class="container updateprojects">
+	{{#if admin}}
+		<h1>Update Projects</h1>
+		<a class="quicknav" href="{{pathFor 'admin'}}">Back to Admin page</a>
+		<section id="update-project">
+			{{#if showMessage}}
+				<div id="message">
+					<p>Are you sure you want to edit this project?</p>
+					<div class="buttons">
+						<button class="btn dark cancle">Cancle</button>
+						<button class="btn dark yes">Yes</button>
+					</div>
+				</div>
+			{{/if}}
+			
+			<ul class="admin-projects list">
+			{{#each projects}}
+				<li class="project" id="{{_id}}">
+					<div class="form-group">
+						<h3>{{name}}</h3>
+						<button class="btn edit small" name="updateproject">Edit Project</button>
+					</div>
+					<div class="wrapper">
+						<span>{{short_description}}</span>
+						<div class="bottom-info">
+							<span><strong>Tags: </strong>{{tags}}</span>
+							<span><strong>Category: </strong>{{category}}</span>
+							<span><strong>Short Description: </strong>{{short_description}}</span>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+			</ul>
+		</section>
+	{{else}}
+	<h2>You do not have the correct administration for this page.</h2>
+	<a href="{{pathFor 'home'}}">Go home</a>
+	{{/if}}
+	</div>
+</template>

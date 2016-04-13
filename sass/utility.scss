@@ -1,0 +1,138 @@
+//COLOR VARIABLES
+$white: 	  #ffffff;
+$black: 	  #000000;
+$dark: 	  	  #1a1a1a;
+$grey:  	  #444444;
+$green:       #88c425;
+$lightGreen:  #eafde6;
+$orange:      orange;
+
+/* =============== BUTTON STYLING =============== */
+.btn {
+	position: relative;
+	display: inline-block;
+	margin: 10px 0;
+	font-size: 18px;
+	background-color: $green;
+	color: $white;
+	text-align: center;
+	transition: background-color 0.3s ease-out 0.1s;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	&.padding {
+		padding: 10px;
+	}
+	&:hover {
+		background-color: lighten($green, 5%);
+	}
+	&.dark {
+		background: $dark;
+		&:hover {
+			background-color: $black;
+		}
+	}
+	&.small {
+		font-size: 14px;
+		padding: 5px 1.5em;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 10px 3em;
+		text-align: center;
+		box-sizing: border-box;
+	}
+}
+
+
+.alert {
+	color: $white;
+	border: 1px solid red;
+	padding: 5px;
+	display: inline-block;
+	button {
+		display: none;
+	}
+	&:before {
+		display: none;
+	}
+}
+
+ul.buttons {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	li {
+		position: relative;
+		display: inline-block;
+		font-size: 0;
+		box-sizing: border-box;
+		button {
+			display: inline-block;
+			background-color: $dark;
+			margin: 10px;
+			border: none;
+			border-radius: 0;
+			a {
+				padding: 10px;
+			    color: white;
+			    text-decoration: none;
+			    display: block;
+			    font-size: 16px;
+			}
+		}
+	}
+}
+
+#login-buttons {
+	.login-close-text {
+	    top: 0;
+	    right: 0;
+	    width: 22px;
+	    padding: 0;
+	    height: 22px;
+	    position: absolute;
+	    background-color: none;
+	    text-indent: -2000px;
+	    margin: 0;
+	    box-sizing: border-box;
+	    &:before {
+	    	position: absolute;
+		    content: 'x';
+		    top: 0;
+		    text-indent: 0;
+		    left: 0;
+		    font-size: 24px;
+		    color: white;
+		    width: 100%;
+		    height: 100%;
+	    }
+	}
+	.login-link-text {
+		background-color: $dark;
+		text-decoration: none;
+		padding: 10px 3em;
+	}
+}
+
+.col-1 {
+	display: inline-block;
+	width: 70%;
+	box-sizing: border-box;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+.col-2 {
+	display: inline-block;
+	width: 30%;
+	box-sizing: border-box;
+	vertical-align: top;
+	margin: 0;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: 400;
+}

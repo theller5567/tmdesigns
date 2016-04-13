@@ -1,0 +1,350 @@
+//COLOR VARIABLES
+$white: 	  #f2f2f2;
+$black: 	  #000000;
+$dark: 	  	  #1a1a1a;
+$grey:  	  #444444;
+$green:       #88c425;
+$lightGreen:  #eafde6;
+$orange:      orange;
+
+.container {
+	position: relative;
+	max-width: 960px;
+	margin: 20px auto;
+	min-height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	h1 {
+		text-align: center;
+	}
+}
+#admin {
+	ul.buttons {
+		li {
+			display: block;
+			button {
+				position: relative;
+				display: block;
+				margin: 10px auto;
+				width: 70%;
+				&:hover {
+					background-color: lighten($dark, 3%);
+				}
+				&.remove-projects, &.add-projects, &.update-projects, &.show-users {
+					&:before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						left: 10px;
+						transform: translateY(-50%);
+						width: 25px;
+						height: 25px;
+						z-index: 2;
+					}
+				}
+				&.remove-projects {
+					&:before {
+						background-image: url('img/icons/circle-x.svg');
+						background-repeat: no-repeat;
+					}
+				}
+				&.add-projects {
+					&:before {
+						background-image: url('img/icons/circle-plus.svg');
+						background-repeat: no-repeat;
+					}
+					
+				}
+				&.update-projects {
+					&:before {
+						width: 23px;
+						height: 23px;
+						background-image: url('img/icons/circle-update.svg');
+						background-repeat: no-repeat;
+					}
+				}
+				&.show-users {
+					&:before {
+						width: 30px;
+						height: 30px;
+						background-image: url('img/icons/circle-user.svg');
+						background-repeat: no-repeat;
+					}
+				}
+				a {
+					text-align: left;
+					padding-left: 50px;
+				}
+			}
+		}
+	}
+}
+#message {
+	display: block;
+	width: 60%;
+	margin-left: 20%;
+	padding: 5px;
+	text-align: center;
+	p {
+		color: $white;
+	}
+	.buttons {
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		text-align: center;
+		button {
+			padding: 10px;
+		}
+	}
+	&.error {
+		background-color: red;
+		color: white !important;
+		font-weight: 700;
+	}
+}
+
+#project {
+	.wrapper {
+		box-sizing: border-box;
+		overflow: hidden;
+		padding: 20px;
+		width: 100%;
+		display: block;
+		background-color: $dark;
+		font-size: 0;
+		h2 {
+			margin: 10px 0;
+			display: block;
+		}
+		.project-info {
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+			float: left;
+			width: 85%;
+			box-sizing: border-box;
+			padding-left: 20px;
+			font-size: 16px;
+			border-left: 1px solid lighten($dark, 5%);
+			p {
+				line-height: 1.5em;
+				color: $green;
+				font-weight: 700;
+				margin-bottom: 10px;
+				span {
+					color: $white;
+					font-weight: 300;
+					font-family: 'born';
+				}
+			}
+		}
+		
+		figure {
+			position: relative;
+			display: inline-block;
+			box-sizing: border-box;
+			padding-right: 10px;
+			float: left;
+			width: 15%;
+			img {
+				max-width: 100%;
+			}
+		}
+		
+	}
+}
+
+#projects {
+	&.container {
+		text-align: center;
+	}
+	margin: 20px auto;
+	h2 {
+		width: 60%;
+		margin: 0 auto;
+	}
+}
+
+#addproject {
+	display: block;
+	text-align: center;
+	#message {
+		display: none;
+		font-size: 16px;
+		color: $green;
+		text-align: center;
+	}
+	form#add-project {
+		display: inline-block;
+		width: 100%;
+		text-align: left;
+		font-size: 0;
+	}
+}
+
+#home {
+	text-align: center;
+	h1 {
+		font-size: 4em;
+	}
+	h2 {
+		text-align: center;
+		margin-bottom: 20px;
+		font-size: 2.5em;
+	}
+	p {
+		font-family: 'born';
+		font-size: 1.4em;
+		line-height: 1.7em;
+		color: $lightGreen;
+		width: 70%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	button {
+		margin: 30px auto;
+		display: block;
+	}
+}
+
+#contact {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 20px auto;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 0;
+	h1 {
+		font-size: 36px;
+		text-align: left;
+		margin-bottom: 0.40em;
+	}
+	h2 {
+		font-size: 28px;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	p {
+		font-size: 16px;
+		text-align: left;
+		font-family: 'born';
+		color: $lightGreen;
+		margin-bottom: 20px;
+	}
+	#contact-form {
+		padding: 10px 0 10px 0;
+		font-size: 0;
+		label {
+			line-height: 20px;
+		}
+		.phone, .email, .budget, .startdate {
+			width: 48%;
+			display: inline-block;
+		}
+		.email, .budget {
+			width: 52%;
+			input {
+				width: 90%;
+			}
+		}
+	}
+	.figure {
+		display: block;
+		margin: 35px 0 20px;
+		img {
+			max-width: 100%;
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+		p {
+			background-color: rgba(0,0,0,0.8);
+			padding: 5px;
+			margin: 0;
+			box-sizing: border-box;
+		}
+	}
+	address {
+		span {
+			font-size: 14px;
+			color: $white;
+			strong {
+				color: $green;
+				font-weight: 700;
+			}
+		}
+	}
+	.resume {
+		position: relative;
+		display: inline-block;
+		padding: 10px;
+		margin: 10px 0;
+		font-size: 18px;
+		background: $green;
+		color: $white;
+		text-align: center;
+		transition: background-color 0.3s ease-out 0.1s;
+		border: none;
+		&:hover {
+			background-color: lighten($green, 5%);
+		}
+	}
+}
+
+#about {
+	display: block;
+	font-size: 0;
+	h1,h2 {
+		text-align: left;
+		margin-top: 20px;
+	}
+	h2 {
+		margin-bottom: 10px;
+	}
+	img {
+		max-width: 100%;
+	}
+	a {
+		margin-top: 20px;
+		display: block;
+		text-align: center;
+	}
+}
+
+#blog {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	.wrapper {
+		box-sizing: border-box;
+		margin-top: 20px;
+		h2 {text-align: center;}
+	}
+	button.admin {
+		position: absolute;
+		top: auto;
+		right: 10px;
+	}
+	#submitpost {
+		position: relative;
+		.submit {
+			display: inline-block;
+			width: 30%;
+		}
+		button.cancle {
+			position: absolute;
+			content: 'X';
+			color: $black;
+			top: 5px;
+			right: 10px;
+			width: 25px;
+			height: 25px;
+			background-color: $white;
+			text-indent: -20000px;
+			background: url('img/icons/circle-x.svg') no-repeat;
+		}
+	}
+
+}

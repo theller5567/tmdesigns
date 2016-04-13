@@ -1,0 +1,31 @@
+<template name="project">
+	<div id="project" class="container">
+		{{#if Template.subscriptionsReady}}
+			<a class="quicknav" href="{{pathFor 'projects'}}">Back to Projects</a>
+			<h1 class="center">{{name}}</h1>
+			<div class="wrapper">
+				<figure>
+					{{#if image}}
+						<img src="{{image}}" alt="{{name}}">
+					{{else}}
+						{{> spinner}}
+					{{/if}}
+				</figure>
+				<div class="project-info">
+					<p>Short Description: <span>{{short_description}}</span></p>
+					<p>Long Description: <span>{{long_description}}</span></p>
+					<p>Tags: <span>{{tagsl}}</span></p>
+					<p>Category: <span>{{category}}</span></p>
+					<p>Created on: <span>{{createdAtFormated}}</span></p>
+					{{#if updatedAt}}
+						{{#if sameDate}}
+							<p>Updated On: <span>{{updatedAt}}</span></p>
+						{{/if}}
+					{{/if}}
+				</div>
+			</div>
+		{{else}}
+			{{> spinner}}
+		{{/if}}
+	</div>
+</template>

@@ -1,0 +1,26 @@
+<template name="users">
+	<div id="users" class="container">
+		{{#if admin}}
+			<a class="quicknav" href="{{pathFor 'admin'}}">Back to Admin page</a>
+			{{#if showMessage}}
+			<div id="message">
+				<p>Are you sure you want to delete this project?</p>
+				<div class="buttons">
+					<button class="btn dark cancle">Cancle</button>
+					<button class="btn dark yes">Yes</button>
+				</div>
+			</div>
+			{{/if}}
+			<ul class="users list">
+			{{#each users}}
+				<li class="user" id="{{_id}}">
+					<div class="header">
+						<h3>{{userEmail}}</h3>
+						<button class="btn small edit">Delete User</button>
+					</div>
+				</li>
+			{{/each}}
+			</ul>
+		{{/if}}
+	</div>
+</template>

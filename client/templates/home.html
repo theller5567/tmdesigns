@@ -1,0 +1,12 @@
+<template name="home">
+	<div id="home" class="container">
+		<h1>Travis M. Heller</h1>
+		<h2>Front End Developer</h2>
+		<p>Travis is a web developer with a Bachelors in Interactive Media Design from The Art Institutes of Atlanta. His passion is web development and eye catching interactions that make the user feel engaged all while maintaining clean and easy to read code.</p>
+		{{#each rasp}}
+			<p>TITLE: {{this.title}}</p>
+			<p>BODY: {{this.body}}</p>
+		{{/each}}
+		<button class="btn"><a href="{{pathFor 'projects'}}">View Projects</a></button>
+	</div>
+</template>

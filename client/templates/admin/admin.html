@@ -1,0 +1,24 @@
+<template name="admin">
+	<div id="admin" class="container">
+		<h1>Admin Page</h1>
+		{{> login}}
+		{{#if admin}}
+		<ul class="buttons">
+			<li>
+				<button class="remove-projects"><a href="{{pathFor 'removeprojects'}}">Remove projects</a></button>
+			</li>
+			<li>
+				<button  class="add-projects"><a href="{{pathFor 'addproject'}}">Add projects</a></button>
+			</li>
+			<li>
+				<button  class="update-projects"><a href="{{pathFor 'updateprojects'}}">Update projects</a></button>
+			</li>
+			<li>
+				<button  class="show-users"><a href="{{pathFor 'users'}}">Show users</a></button>
+			</li>
+		</ul>
+		{{else}}
+			<p style="text-align: center;">If you are not Travis - go away</p>
+		{{/if}}
+	</div>
+</template>

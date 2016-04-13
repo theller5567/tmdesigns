@@ -1,0 +1,24 @@
+<template name="signin">
+	{{#if userLoggedIn}}
+		<form id="signout">
+			<h3>Logout</h3>
+			<button class="logout">Logout</button>
+		</form>
+	{{else}}
+		<form id="signin">
+			<h3>Login</h3>
+			<div class="input-group">
+				<div class="error"></div>
+				<label for="login-email">Email:</label>
+				<input type="text" class="email" placeholder="Email" name="login-email">
+			</div>
+			<div class="input-group">
+				<label for="login-password">Password:</label>
+				<input type="text" class="password" placeholder="password">
+			</div>
+			<button class="submitlogin">Login</button>
+			<span class="forgotPassword">forgot password</span><span class="createAccount">Create account</span>
+		</form>
+	{{/if}}
+	
+</template>

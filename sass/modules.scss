@@ -1,0 +1,566 @@
+//COLOR VARIABLES
+$white: 	  #ffffff;
+$black: 	  #000000;
+$dark: 	  	  #1a1a1a;
+$grey:  	  #444444;
+$green:       #88c425;
+$lightGreen:  #eafde6;
+$orange:      orange;
+
+/* =============== Input Block styling =============== */
+.input-group {
+	font-size: 16px;
+	margin: 10px 0 10px 0;
+	padding: 0 20px 0 0;
+	box-sizing: border-box;
+	&.half {
+		width: 50%;
+		display: inline-block;
+	}
+	label {
+		color: $lightGreen;
+		display: block;
+		padding-bottom: 5px;
+		.required {
+			color: red;
+			padding-left: 5px;
+		}
+	}
+	input[type="file"] {
+		background-color: none;
+		background: none;
+		border: none;
+	}
+	input,select, textarea, input.format {
+		background-color: $black;
+		color: $white;
+		box-sizing: border-box;
+		padding: 5px 2px 5px 10px;
+		font-size: 14px;
+		border: none;
+		display: block;
+		color: $lightGreen;
+		width: 100%;
+		height: 3em;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0px;
+		-webkit-transition: all 0.30s ease-in-out;
+		-moz-transition: all 0.30s ease-in-out;
+		-ms-transition: all 0.30s ease-in-out;
+		-o-transition: all 0.30s ease-in-out;
+		outline: none;
+		border: 1px solid $black;
+		&:focus {
+		  box-shadow: 0 0 5px $lightGreen;
+		  border: 1px solid $lightGreen;
+		}
+	}
+	textarea {
+		min-height: 100px;
+	}
+}
+
+
+/* =============== Project - List - Grid - View =============== */
+ul.projects {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	font-size: 0;
+	margin: 20px auto;
+	width: 100%;
+	padding: 0;
+	//Grid View
+	li {
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+		margin: 20px 2%;
+		vertical-align: top;
+		box-sizing: border-box;
+		background: $grey;
+		text-align: left;
+		width: 29.3333%;
+		max-width: 300px;
+		background-color: $black;
+		box-sizing: border-box;
+		font-size: 16px;
+		&:hover {
+			.bottom-info {
+				bottom: 0;
+				transition: bottom ease-out 0.3s;
+			}
+		}
+		.header {
+			background-color: lighten($black, 10%);
+			padding: 5px;
+			position: relative;
+			width: 100%;
+			box-sizing: border-box;
+			h4 {
+				text-align: left;
+				text-decoration: none;
+			}
+			span.color {
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background-color: orange;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				text-indent: 3000px;
+				display: block;
+				z-index: 2;
+				&.blue {
+					background-color: blue;
+				}
+				&.green {
+					background-color: $green;
+				}
+				&.red {
+					background-color: red;
+				}
+				&.orange {
+					background-color: $orange;
+				}
+				&.purple {
+					background-color: purple;
+				}
+				&.white {
+					background-color: $white;
+				}
+			}
+		}
+		figure {
+			position: relative;
+			padding: 10px;
+			overflow: hidden;
+			img {
+				position: relative;
+				width: 100%;
+				max-height: 150px;
+				text-align: center;
+			}
+			figcaption {
+				font-family: 'gothamlight';
+				font-size: 12px;
+				line-height: 1em;
+				color: $white;
+				text-align: center;
+				display: block;
+				margin: -10px 0 10px 0;
+			}
+		}
+		.bottom-info {
+			position: absolute;
+			bottom: -100%;
+			left: 0;
+			background-color: rgba(0,0,0,0.7);
+			width: 100%;
+			transition: bottom 1s ease-out 0.3s;
+			div {
+				font-size: 12px;
+				padding: 10px 5px;
+				text-align: left;
+				line-height: 16px;
+				color: $white;
+				display: block;
+				z-index: 2;
+				span {
+					color: $white;
+				}
+			}
+		}
+	}
+	//list View
+	&.list {
+		li {
+			display: block;
+			margin: 0;
+			width: 100%;
+			max-width: 100%;
+			box-sizing: border-box;
+			color: $lightGreen;
+			.header {
+				background: none;
+			}
+			h4 {
+				display: block;
+				font-size: 1.2em;
+				margin: 0;
+				color: $lightGreen;
+				text-align: left;
+				padding-bottom: 15px;
+				border-bottom: 1px solid $grey;
+			}
+			.right-post-info {
+				position: absolute;
+				top: 0;
+				right: 10px;
+				display: inline-block;
+				span {
+					position: relative;
+					margin: 0;
+					padding: 0;
+					font-size: 12px;
+					text-align: right;
+					&.posted {
+						color: $orange;
+					}
+					&.user {
+						color: $green;
+					}
+				}
+			}
+			span {
+				display: block;
+				text-align: left;
+				font-family: 'born';
+    			margin-top: 10px;
+			}
+			p {
+				text-align: left;
+				display: inline-block;
+				width: 80%;
+				margin: 0;
+				font-size: 0.8em;
+				padding: 0 0 0 10px;
+			}
+			button {
+				position: absolute;
+				top: auto;
+				right: 10px;
+			}
+			.bottom-info {
+				position: relative;
+				display: inline-block;
+				span {
+					font-family: 'gothamlight';
+					font-size: 12px;
+					margin: 3px 0;
+					color: $orange;
+					strong {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* =============== Blog - Post - module =============== */
+ul.post {
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	font-size: 0;
+	margin: 20px auto;
+	width: 100%;
+	padding: 0;
+	li {
+		font-size: 16px;
+		position: relative;
+		display: block;
+		border-top: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		padding: 10px 10px 50px 10px;
+		background-color: $dark;
+		h4 {
+			display: block;
+			font-size: 1.2em;
+			margin: 0;
+			color: $lightGreen;
+			text-align: left;
+			padding-bottom: 15px;
+			border-bottom: 1px solid $grey;
+		}
+		.right-post-info {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			display: inline-block;
+			span {
+				position: relative;
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				text-align: right;
+				&.posted {
+					color: $orange;
+				}
+				&.user {
+					color: $green;
+				}
+			}
+		}
+		span {
+			display: block;
+			text-align: left;
+			font-family: 'born';
+			margin-top: 10px;
+		}
+		
+		button {
+			position: absolute;
+			top: auto;
+			right: 10px;
+		}
+		span.title {
+			display: inline-block;
+			margin-bottom: 10px;
+			color: $green;
+			font-weight: 700;
+			font-family: 'condblack';
+			font-size: 18px;
+		}
+		span:nth-child(2) {
+			font-size: 10px;
+		}
+		.box {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+		p {
+			font-size: 16px;
+			font-family: 'born';
+			padding-left: 0;
+			font-weight: 300;
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+		&:nth-child(odd) {
+			background-color: lighten($dark, 2%);
+		}
+	}
+}
+
+/* =============== Project - List - Grid - View =============== */
+ul.admin-projects {
+	@extend ul.post;
+	li {
+		padding: 10px;
+		button {
+			position: absolute;
+			top: 0;
+			right: 10px;
+		}
+		p {
+			font-size: 16px;
+			font-family: 'born';
+			padding-left: 0;
+			font-weight: 300;
+			strong {
+				color: $orange;
+			}
+		}
+	}
+}
+
+/* =============== Project - List - Grid - View =============== */
+ul.users {
+	@extend ul.post;
+}
+
+
+/* =============== Blog - Submit Post - module =============== */
+#submitpost {
+	display: none;
+	background-color: rgba(0,0,0,0.3);
+	padding: 20px;
+	border-radius: 10px;
+	height: 0;
+	opacity: 0;
+	transition: all 1s ease-in 0.3s;
+	&.fade {
+		display: block;
+		height: 100%;
+		opacity: 1;
+	}
+	input[name='title'], textarea {
+		background-color: $white;
+		color: $black;
+	}
+	input[name="submit"] {
+		margin-right: 10px;
+	}
+}
+
+/* =============== Quick Nav Button Module =============== */
+.quicknav {
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	margin: 10px auto;
+	text-align: center;
+	cursor: pointer;
+	background-color: $dark;
+	color: $lightGreen;
+	padding: 10px 20px;
+}
+
+/* =============== Login Buttons - module =============== */
+#login-buttons {
+	display: block;
+	margin: 30px 0;
+	text-align: center;
+	.login-link-and-dropdown-list {
+		position: static;
+	}
+	#login-dropdown-list {
+		position: absolute;
+	    top: 50%;
+	    box-sizing: border-box;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    margin: 0;
+	    padding: 20px;
+	    width: 50%;
+	    background-color: $black;
+	    border: 2px solid $lightGreen;
+	    border-radius: none;
+	    overflow: hidden;
+	    color: #eafde6;
+	}
+	.login-button {
+		background-color: $green;
+		color: $white;
+		text-align: center;
+		font-size: 16px;
+		padding: 10px;
+		border-radius: none;
+	}
+	.login-close-text-clear{
+		display: none;
+	}
+	.accounts-dialog label {
+		margin: 0;
+	}
+	.accounts-dialog label {
+		display: block;
+		font-size: 18px;
+		text-align: left;
+	}
+	.login-form {
+		input#login-username, input[type=password] {
+			background-color: $black;
+			color: $white;
+			box-sizing: border-box;
+			padding: 5px 2px 5px 10px;
+			font-size: 16px;
+			border: none;
+			display: block;
+			color: $lightGreen;
+			width: 100%;
+			height: 3em;
+			-webkit-appearance: none;
+			-webkit-border-radius: 0px;
+			-webkit-transition: all 0.30s ease-in-out;
+			-moz-transition: all 0.30s ease-in-out;
+			-ms-transition: all 0.30s ease-in-out;
+			-o-transition: all 0.30s ease-in-out;
+			outline: none;
+			border: 1px solid $black;
+			&:focus {
+			  box-shadow: 0 0 5px $lightGreen;
+			  border: 1px solid $lightGreen;
+			}
+		}
+		input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+		    background-color: $white !important;
+		    background-image: none;
+		}
+		input:-webkit-autofill {
+		    -webkit-box-shadow: 0 0 0px 1000px $white inset;
+		    -webkit-text-fill-color: $black !important;
+		}
+	}
+	//login buttons
+	.login-buttons-with-only-one-button {
+		display: inline-block;
+		.login-display-name {
+			font-size: 14px;
+			color: $green;
+		}
+		.login-button {
+			background-color: $dark;
+			font-size: 14px;
+			color: $white;
+			padding: 10px;
+			border-radius: 0;
+			border: none;
+		}
+		.login-image {
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
+	}
+}
+
+/* =============== Blog - Login/Register Buttons - module =============== */
+#register, #login {
+	display: inline-block;
+	width: 50%;
+	font-size: 16px;
+	box-sizing: border-box;
+	vertical-align: top;
+	input {
+		background-color: $black;
+		color: $lightGreen;
+		padding: 10px;
+		margin: 10px 0;
+		box-sizing: border-box;
+		border: none;
+	}
+}
+#register {
+	text-align: right;
+	padding-right: 10px;
+	background-color: $dark;
+	h2 {
+		margin-top: 10px;
+	}
+	form {
+		p {
+			color: $lightGreen;
+		}
+	}
+}
+#login {
+	text-align: left;
+	padding-left: 10px;
+	background-color: lighten($dark, 3%);
+	h2 {
+		margin-top: 10px;
+	}
+	form {
+		p {
+			color: $lightGreen;
+		}
+	}
+}
+
+/* =============== Info Box - module =============== */
+#info {
+	position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+	p {
+		font-size: 12px;
+		margin: 0;
+		padding: 0 10px;
+		display: inline-block;
+		font-weight: 400;
+		color: $lightGreen;
+		&:nth-child(1){
+			font-weight: 700;
+			font-size: 14px;
+
+		}
+	}
+}

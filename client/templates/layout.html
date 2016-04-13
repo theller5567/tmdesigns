@@ -1,0 +1,14 @@
+<body>
+  {{renderPage}}
+</body>
+
+<template name="layout">
+	<div class="overlay"></div>
+	<div class="wrapper">
+		{{#if admin}}
+			{{> projectInfo}}
+		{{/if}}
+		{{> navbar}}
+    	{{> yield}}
+	</div>
+</template>

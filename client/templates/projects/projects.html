@@ -1,0 +1,9 @@
+<template name="projects">
+	<div id="projects" class="container">
+		<h1 class="center">Building creative &amp; effective websites</h1>
+		{{#if admin}}
+			<a class="quicknav" href="{{pathFor 'admin'}}">Back to Admin page</a>
+		{{/if}}
+		{{> listProjects}}
+	</div>
+</template>

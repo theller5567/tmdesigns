@@ -1,0 +1,38 @@
+<template name="mypost">
+	<div class="container" id="mypost">
+		<h1>{{username}}  Post</h1>
+		<button class="btn dark"><a href="{{pathFor 'blog'}}" >Back to Blog</a></button>
+		{{#if showMessage}}
+		<div id="message">
+			<p>Are you sure you want to delete this project?</p>
+			<div class="buttons">
+				<button class="btn dark cancle">Cancle</button>
+				<button class="btn dark yes">Yes</button>
+			</div>
+		</div>
+		{{/if}}
+		<ul class="post list">
+			{{#if Template.subscriptionsReady}}
+				{{#each myPost}}
+					<li>
+						<div class="header">
+						<h4>{{title}}</h4>
+						<div class="right-post-info">
+							<span class="user">{{username}}</span>
+							<span class="posted">{{createdAtFormated}}</span>
+						</div>
+						<p>{{body}}</p>
+					</div>
+						{{#if admin}}
+						<button class="btn small edit" id="remove_post">Delete Post</button>
+						{{/if}}
+					</li>
+					{{else}}
+					<li><p>No Post</p></li>
+				{{/each}}
+			{{else}}
+				{{> spinner}}
+			{{/if}}
+		</ul>
+	</div>
+</template>

@@ -1,0 +1,34 @@
+<template name="showpost">
+	{{#if showMessage}}
+	<div id="message">
+		<p>Are you sure you want to remove this post?</p>
+		<div class="buttons">
+			<button class="btn dark cancle">Cancle</button>
+			<button class="btn dark yes">Yes</button>
+		</div>
+	</div>
+	{{/if}}
+	<ul class="post list">
+		{{#if Template.subscriptionsReady}}
+			{{#each post}}
+				<li>
+					<div class="header">
+						<h4>{{title}}</h4>
+						<div class="right-post-info">
+							<span class="user">{{username}}</span>
+							<span class="posted">{{createdAtFormated}}</span>
+						</div>
+					</div>
+					<p>{{body}}</p>
+					{{#if admin}}
+						<button class="btn small edit admin" id="remove_post">Delete Post</button>
+					{{/if}}
+				</li>
+				{{else}}
+				<li><p>Be the first to write a post!</p></li>
+			{{/each}}
+		{{else}}
+			{{> spinner}}
+		{{/if}}
+	</ul>
+</template>

@@ -1,0 +1,19 @@
+<template name="blog">
+	<div id="blog" class="container">
+		<h1>Blog Page</h1>
+		{{#if userLoggedIn}}
+			<button class="btn dark"><a href="#" class="logout">Logout</a></button>
+			<button class="btn dark"><a href="{{pathFor 'mypost'}}">My Post</a></button>
+			<button class="btn addpost"><a href="">Add Post</a></button>
+			{{> submitpost}}
+			{{> showpost}}
+		{{else}}
+			{{> flashMessages}}
+			<div class="wrapper">
+				<h2>New tutorials and posts every month. Register here to improve your code.</h2>
+				{{> login}}
+				{{> showpost}}
+			</div>
+		{{/if}}
+	</div>
+</template>
